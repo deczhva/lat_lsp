@@ -10,11 +10,10 @@
 @endif
 
 <center class="mb-5">
-
-   <img src="/img/{{ Auth::user()->foto == null ? 'profile.png' : Auth::user()->foto }}" class="rounded-circle" style="width: 150px;" alt="Avatar" />
+   <img src="/img/{{ Auth::user()->foto == null ? 'profile.jpg' : Auth::user()->foto }}" class="rounded-circle" style="width: 150px; height: 150px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" alt="Avatar" />
 </center>
 
-   <div class="card">
+   <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
       <div class="card-header">
          <h4>Update profile</h4>
       </div>
@@ -70,7 +69,7 @@
             </table>
             <div class="text-end">
                
-               <button class="btn btn-primary" type="submit">simpan</button>
+               <button class="btn btn-outline-warning" type="submit" style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);">simpan</button>
             </div>
          </form>
       </div>

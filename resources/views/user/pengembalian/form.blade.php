@@ -12,10 +12,10 @@
                 @csrf
                 <div class="mb-3">
                     <label for="">Pilih buku yang dikembalikan</label>
-                    <select name="buku_id" id="">
+                    <select name="buku_id" id="" class="form-select">
                         <option value="" selected disabled>--Pilih Buku--</option>
                         @foreach($data as $d)
-                        <option value="{{ $d->buku->id }}">{{ $d->buku->judul_buku }}</option>
+                        <option value="{{ $d->buku->id }}">{{ $d->buku->judul }}</option>
                         @endforeach
                     </select>
                 </div>

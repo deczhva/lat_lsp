@@ -1,13 +1,14 @@
 @extends('layouts.user')
+
 @section('main')
 <div class="container">
     <div class="row">
         <div class="col-12">
-            {{-- @foreach ($data as $p)
+            @foreach ($data as $p)
                 <div class="alert alert-info">
-                    <marquee>{{ $p->isi_pemberitahuan }}</marquee>
+                    <marquee>{{ $p->isi }}</marquee>
                 </div>
-            @endforeach --}}
+            @endforeach
 
             <div class="row">
                 @foreach ($buku as $b)
@@ -18,7 +19,7 @@
                                     class="card-img" alt="....">
                             </div>
                             <div class="card-body" style="height: 150px;">
-                                <h3 style="min-height: 28px"><b>{{ $b->judul_buku }}</b></h3>
+                                <h3 style="min-height: 28px"><b>{{ $b->judul }}</b></h3>
                                 @if ($b->kategori->nama == 'Umum')
                                     <span class="badge rounded-pill text-bg-danger">{{ $b->kategori->nama }}</span>
                                 @elseif($b->kategori->nama == 'Fiksi')
@@ -42,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <form action="{{ route('user.form.peminjaman') }}" method="POST">
+                                <form action="{{ route('user.peminjaman.form') }}" method="POST">
                                     @csrf
                                     <input type="hidden" value="{{ $b->id }}" name="buku_id">
                                     {{-- @dd($b->id) --}}

@@ -28,7 +28,7 @@
                     <select name="buku_id" id="" class="form-select">
                         <option value="" disabled selected>Pilih Opsi</option>
                         @foreach($buku as $b)
-                        <option value="{{ $b->id }}" {{ isset($buku_id) ? $buku_id == $b->id ? "selected" : "" : "" }}>{{ $b->judul_buku }}</option>
+                        <option value="{{ $b->id }}" {{ isset($buku_id) ? $buku_id == $b->id ? "selected" : "" : "" }}>{{ $b->judul }}</option>
                         @endforeach
                     </select>
                </div>

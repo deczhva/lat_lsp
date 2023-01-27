@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Buku;
 
-class ApiBukuController extends Controller
+class PengembalianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,15 +14,7 @@ class ApiBukuController extends Controller
      */
     public function index()
     {
-        $buku = Buku::all();
-        if(!$buku){
-            return response()->json([
-                'data' => 'not found'
-            ]);
-        }
-            return response()->json([
-                'data' => $buku
-        ]);
+        //
     }
 
     /**
@@ -43,15 +35,7 @@ class ApiBukuController extends Controller
      */
     public function store(Request $request)
     {
-        $buku = Buku::create($request->all());
-        if(!$buku){
-            return response()->json([
-                'data' => 'failed to store'
-            ]);
-        }
-        return response()->json([
-            'data' => $buku
-        ]);
+        //
     }
 
     /**
@@ -85,17 +69,7 @@ class ApiBukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $buku = Buku::findOrFail($id);
-        $buku->update($request->all());
-
-        if(!$buku){
-            return response()->json([
-                'data' => 'failed to update'
-            ]);
-        }
-        return response()->json([
-            'data' => $buku
-        ]);
+        //
     }
 
     /**
@@ -106,16 +80,6 @@ class ApiBukuController extends Controller
      */
     public function destroy($id)
     {
-        $buku = Buku::findOrFail($id);
-        $deleted = $buku->delete();
-
-        if(!$deleted){
-            return response()->json([
-                'data' => 'failed to delete'
-            ]);
-            return response()->json([
-                'data' => 'successfully delete data'
-            ]);
-        }
+        //
     }
 }

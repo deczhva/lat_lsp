@@ -36,7 +36,7 @@
                 <tr>
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $p->user->fullname }}</td>
-                    <td>{{ $p->buku->judul_buku }}</td>
+                    <td>{{ $p->buku->judul }}</td>
                     {{-- <td>{{ $p->tanggal_peminjaman }}</td> --}}
                     <td>{{ $p->tanggal_pengembalian }}</td>
                     {{-- <td>{{ $p->kondisi_buku_saat_dipinjam }}</td> --}}

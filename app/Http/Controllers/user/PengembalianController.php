@@ -66,7 +66,7 @@ class PengembalianController extends Controller
             ]);
         }
 
-        return redirect()->route('user.riwayat.pengembalian');
+        return redirect()->route('user.pengembalian.riwayat');
 
         }
     }
