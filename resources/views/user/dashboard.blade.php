@@ -4,11 +4,11 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            @foreach ($data as $p)
+            {{-- @foreach ($data as $p)
                 <div class="alert alert-info">
                     <marquee>{{ $p->isi }}</marquee>
                 </div>
-            @endforeach
+            @endforeach --}}
 
             <div class="row">
                 @foreach ($buku as $b)

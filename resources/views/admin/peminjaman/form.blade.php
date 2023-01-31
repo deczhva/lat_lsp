@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.admin')
 
 @section('main')
 <div class="container">
@@ -31,12 +31,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($peminjaman as $key => $p)
+                        @foreach ($peminjaman as $key => $p) --}}
                             <tr>
                                 <td>{{ $key + 1 }}</td>
-                                <td>{{ $p->user->fullname }}</td>
-                                <td>{{ $p->buku->judul }}</td>
-                                <td>{{ $p->tanggal_peminjaman }}</td>
+                                <td>test</td>
+                                <td>test</td>
+                                <td>test</td>
                                 <td>{{ $p->tanggal_pengembalian }}</td>
                                 <td>{{ $p->kondisi_buku_saat_dipinjam }}</td>
                                 <td>{{ $p->kondisi_buku_saat_dikembalikan }}</td>
@@ -46,7 +46,7 @@
                     </tbody>
                 </table>
                 <div class="text-end">
-                    <a href="{{ route('user.form.peminjaman') }}" class="btn btn-outline-warning mt-3" style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);">Pinjam
+                    <a href="{{ route('admin.form.peminjaman') }}" class="btn btn-outline-warning mt-3" style="box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);">Pinjam
                         Buku</a>
                 </div>
             </div>

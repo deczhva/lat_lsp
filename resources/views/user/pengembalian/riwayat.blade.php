@@ -13,7 +13,7 @@
     <div class="card-header">
         <div class="row">
             <div class="col-6">
-                <h4 style="color: #c27400">Riwayat Buku sudah Dikembalikan</h4>
+                <h4 style="color: #c27400">Riwayat Buku Dikembalikan</h4>
             </div>
         </div>
             <div class="card-body">   

@@ -27,27 +27,27 @@
                   <td>
                      <input type="file" name="foto" class="form-control">
                      </td>
-            </tr>
-            <tr>
+               </tr>
+               <tr>
                   <th>Nama Lengkap</th>
                   <td>
                      <input  class="form-control" type="text" name="fullname" value="{{ Auth::user()->fullname }}">
                   </td>
                </tr>
                <tr>
-                  <th>username</th>
+                  <th>Username</th>
                   <td>
                      <input  class="form-control" type="text" name="username" value="{{ Auth::user()->username }}">
                   </td>
                </tr>
                <tr>
-                  <th>password</th>
+                  <th>Password</th>
                   <td>
                      <input  class="form-control" type="password" name="password" placeholder="sandi belum di ubah">
                   </td>
                </tr>
                <tr>
-                  <th>nis</th>
+                  <th>NIS</th>
                   <td>
                      <input  class="form-control" type="text" name="nis" value="{{ Auth::user()->nis }}">
                      {{-- <input  class="form-control" type="hidden" name="kode" value="{{ Auth::user()->kode }}"> --}}

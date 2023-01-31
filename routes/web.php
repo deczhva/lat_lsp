@@ -27,16 +27,16 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::prefix('user')->middleware('auth', 'role:user')->group(function() {
     
-    Route::get('/dashboard', [\App\Http\Controllers\User\DashboardController::class, 'index'])->name('user.dashboard');
+    Route::get('/dashboard', [\App\Http\Controllers\user\DashboardController::class, 'index'])->name('user.dashboard');
     
-    Route::controller(\App\Http\Controllers\User\PeminjamanController::class)->prefix('/peminjaman')->group(function(){
+    Route::controller(\App\Http\Controllers\user\PeminjamanController::class)->prefix('/peminjaman')->group(function(){
         Route::get('/', 'index')->name('user.peminjaman.riwayat');
         Route::get('/form_peminjaman', 'indexForm')->name('user.peminjaman.form');
         Route::post('/form_peminjaman', 'form')->name('user.form.peminjaman');
         Route::post('/submit', 'store')->name('user.submit.peminjaman');
     });
     
-    Route::controller(\App\Http\Controllers\User\PengembalianController::class)->prefix('/pengembalian')->group(function(){
+    Route::controller(\App\Http\Controllers\user\PengembalianController::class)->prefix('/pengembalian')->group(function(){
         Route::get('/', 'index')->name('user.pengembalian.form');
         Route::get('/riwayat', 'riwayat')->name('user.pengembalian.riwayat');
         Route::post('/submit', 'store')->name('user.submit.pengembalian');
@@ -55,10 +55,13 @@ Route::prefix('user')->middleware('auth', 'role:user')->group(function() {
 
 
 Route::prefix('admin')->middleware('auth', 'role:admin')->group(function() {
-    Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/dashboard', [\App\Http\Controllers\admin\DashboardController::class, 'index'])->name('admin.dashboard');
 
     Route::controller(\App\Http\Controllers\admin\PeminjamanController::class)->prefix('/peminjaman')->group(function(){
-        Route::get('/', 'index')->name('admin.peminjaman.form');
+        Route::get('/', 'index')->name('admin.peminjaman.riwayat');
+        Route::get('/form-peminjaman', 'indexForm')->name('admin.peminjaman.form');
+        Route::post('/form-peminjaman', 'form')->name('admin.form.peminjaman');
+        Route::post('/submit', 'store')->name('admin.submit.peminjaman');
     });
 
     Route::controller(\App\Http\Controllers\admin\PengembalianController::class)->prefix('/pengembalian')->group(function(){
